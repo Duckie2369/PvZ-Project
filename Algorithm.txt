@@ -1,0 +1,4 @@
+Double click on PvZ.exe => game run.
+
+A message popping up asks user enter his or her name. Only having an "OK" option.
+
