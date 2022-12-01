@@ -81,12 +81,12 @@ public class Window extends JFrame {
 	
 	static Window w;
 	public static void begin(){
-		gw.dispose();
-		gw = new Window();
+		w.dispose();
+		w = new Window();
 	}
 
 
     public static void main(String[] args) {
-          gw = new Window(true);
+          w = new Window(true);
     }
 }
