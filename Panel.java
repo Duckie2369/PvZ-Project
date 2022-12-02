@@ -26,7 +26,7 @@ public class Panel extends JLayeredPane implements MouseMotionListener{
 	
 	Image normalZombie;
 	Image eeHeadZombie;
-	Collision[] collisions;
+	Collisions[] collisions;
 	
 	ArrayList<ArrayList<Zombie>> ZombiesLane;
     ArrayList<ArrayList<Pea>> PeasLane;
@@ -87,9 +87,9 @@ public class Panel extends JLayeredPane implements MouseMotionListener{
         PeasLane.add(new ArrayList<>()); //line 4
         PeasLane.add(new ArrayList<>()); //line 5
 
-        collisions = new Collider[45];
+        collisions = new Collisions[45];
         for (int i = 0; i < 45; i++) {
-            Collider a = new Collider();
+            Collisions a = new Collisions();
             a.setLocation(44 + (i%9)*100,109 + (i/9)*120);
             a.setAction(new PlantActionListener((i%9),(i/9)));
             collisions[i] = a;
@@ -164,7 +164,7 @@ public class Panel extends JLayeredPane implements MouseMotionListener{
 
         //Draw Plants
         for (int i = 0; i < 45; i++) {
-            Collider c = collisions[i];
+            Collisions c = collisions[i];
             if(c.assignedPlant != null){
                 Plant p = c.assignedPlant;
                 if(p instanceof Peashooter){
