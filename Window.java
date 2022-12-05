@@ -32,38 +32,38 @@ public class Window extends JFrame {
 		sunflower.setAction((ActionEvent e) -> {
 			gp.activePlantingBrush = Plants.Sunflower;
 		});
-		getLayeredPane().add(sunflower, 3);
+		getLayeredPane().add(sunflower, valueOf(3));
 
 		PlaceCard peashooter = new PlaceCard(new ImageIcon(this.getClass().getResource("images/cards/card_peashooter.png")).getImage());
         peashooter.setLocation(175,8);
 		peashooter.setAction((ActionEvent e) -> {
 			gp.activePlantingBrush = Plants.Peashooter;
 		});
-		getLayeredPane().add(punflower, 3);
+		getLayeredPane().add(punflower, valueOf(3));
 
 		PlaceCard frozenpeashooter = new PlaceCard(new ImageIcon(this.getClass().getResource("images/cards/card_freezepeashooter.png")).getImage());
         frozenpeashooter.setLocation(240,8);
 		frozenpeashooter.setAction((ActionEvent e) -> {
 			gp.activePlantingBrush = Plants.FrozenPeashooter;
 		});
-		getLayeredPane().add(frozenpeashooter, 3);
+		getLayeredPane().add(frozenpeashooter, valueOf(3));
 
 		PlaceCard cherrybomb = new PlaceCard(new ImageIcon(this.getClass().getResource("images/cards/card_cherrybomb.png")).getImage());
         cherrybomb.setLocation(305,8);
 		cherrybomb.setAction((ActionEvent e) -> {
 			gp.activePlantingBrush = Plants.CherryBomb;
 		});
-		getLayeredPane().add(cherrybomb, 3);
+		getLayeredPane().add(cherrybomb, valueOf(3));
 
 		PlaceCard wallnut = new PlaceCard(new ImageIcon(this.getClass().getResource("images/cards/card_wallnut.png")).getImage());
         cherrybomb.setLocation(370,8);
 		cherrybomb.setAction((ActionEvent e) -> {
 			gp.activePlantingBrush = Plants.Wallnut;
 		});
-		getLayeredPane().add(wallnut, 3);
+		getLayeredPane().add(wallnut, valueOf(3));
 
 
-		getLayeredPane().add(Sun, 2);
+		getLayeredPane().add(Sun, valueOf(2));
 		setResizable(false);
 		setVisible(true);
 	}
