@@ -3,10 +3,9 @@ import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
-
 public class Sun extends JPanel implements MouseListener {
 
-    GamePanel gp;
+    Panel gp;
     Image sunImage;
 
     int myX;
@@ -15,14 +14,14 @@ public class Sun extends JPanel implements MouseListener {
 
     int destruct = 200;
 
-    public Sun(GamePanel parent,int startX,int startY,int endY){
+    public Sun(Panel parent, int startX, int startY, int endY) {
         this.gp = parent;
         this.endY = endY;
-        setSize(80,80);
+        setSize(80, 80);
         setOpaque(false);
         myX = startX;
         myY = startY;
-        setLocation(myX,myY);
+        setLocation(myX, myY);
         sunImage = new ImageIcon(this.getClass().getResource("images/sun.png")).getImage();
         addMouseListener(this);
     }
@@ -30,20 +29,20 @@ public class Sun extends JPanel implements MouseListener {
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-        g.drawImage(sunImage,0,0,null);
+        g.drawImage(sunImage, 0, 0, null);
     }
 
-    public void advance(){
-        if(myY < endY) {
-            myY+= 4;
-        }else{
+    public void advance() {
+        if (myY < endY) {
+            myY += 4;
+        } else {
             destruct--;
-            if(destruct<0){
+            if (destruct < 0) {
                 gp.remove(this);
                 gp.activeSuns.remove(this);
             }
         }
-        setLocation(myX,myY);
+        setLocation(myX, myY);
     }
 
     @Override
@@ -58,7 +57,7 @@ public class Sun extends JPanel implements MouseListener {
 
     @Override
     public void mouseReleased(MouseEvent e) {
-        gp.setSunScore(gp.getSunScore()+25);
+        gp.setSunScore(gp.getSunScore() + 25);
         gp.remove(this);
         gp.activeSuns.remove(this);
     }

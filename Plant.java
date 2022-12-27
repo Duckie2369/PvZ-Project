@@ -1,5 +1,3 @@
-package Project_Plant_Vs_Zombies;
-
 public abstract class Plant {
 
     public int health = 200;
@@ -9,13 +7,20 @@ public abstract class Plant {
 
     public Panel p;
 
-
-    public Plant(Panel parent,int x,int y){
+    public Plant(Panel parent, int x, int y) {
         this.x = x;
         this.y = y;
         p = parent;
     }
 
-    public void stop(){}
+    public void stop() {
+    }
 
+    public int getHealth() {
+        return health;
+    }
+
+    public void setHealth(int health) {
+        this.health = health;
+    }
 }

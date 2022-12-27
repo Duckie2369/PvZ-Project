@@ -1,67 +1,55 @@
-package Project_Plant_Vs_Zombies;
-
-import java.awt.Graphics;
-import java.awt.Image;
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.awt.event.MouseMotionListener;
 
-import javax.swing.*;
+public class PlaceCard extends JPanel implements MouseListener {
 
-public class PlaceCard extends JPanel implements MouseMotionListener{
+    private Image img;
+    private ActionListener al;
 
-	Image img;
-	ActionListener al;
-	
-	public PlaceCard(Image img) {
-		setSize(64,90);
-		this.img = img;
-		addMouseListener((MouseListener) this);
-	}
-	
+    public PlaceCard(Image img) {
+        setSize(64, 90);
+        this.img = img;
+        addMouseListener(this);
+    }
 
-    public void setAction(ActionListener al){
+    public void setAction(ActionListener al) {
         this.al = al;
     }
 
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-        g.drawImage(img,0,0,null);
+        g.drawImage(img, 0, 0, null);
     }
 
+    @Override
     public void mouseClicked(MouseEvent e) {
 
     }
 
+    @Override
     public void mousePressed(MouseEvent e) {
 
     }
 
+    @Override
     public void mouseReleased(MouseEvent e) {
-        if(al != null){
-            al.actionPerformed(new ActionEvent(this,ActionEvent.RESERVED_ID_MAX+1,""));
+        if (al != null) {
+            al.actionPerformed(new ActionEvent(this, ActionEvent.RESERVED_ID_MAX + 1, ""));
         }
     }
 
+    @Override
     public void mouseEntered(MouseEvent e) {
 
     }
 
+    @Override
     public void mouseExited(MouseEvent e) {
 
     }
-    
-	@Override
-	public void mouseDragged(MouseEvent e) {
-		
-	}
-
-	@Override
-	public void mouseMoved(MouseEvent e) {
-		
-	}
-
 }
