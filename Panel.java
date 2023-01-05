@@ -21,9 +21,9 @@ public class Panel extends JLayeredPane implements MouseMotionListener {
 
     Image normalZombie;
     Image coneHeadZombie;
-    Collisions[] collisions;
+    Collisions[] collisions;    // collision in an array to store many collisions
 
-    ArrayList<ArrayList<Zombie>> ZombiesLane;
+    ArrayList<ArrayList<Zombie>> ZombiesLane;   // 2D array
     ArrayList<ArrayList<Pea>> PeasLane;
     ArrayList<Sun> activeSuns;
 
@@ -55,7 +55,7 @@ public class Panel extends JLayeredPane implements MouseMotionListener {
         this.sunNumber = sunNumber;
         setSunScore(150); // pool avalie
 
-        background = new ImageIcon(this.getClass().getResource("images/mainBG.png")).getImage();
+        background = new ImageIcon(this.getClass().getResource("images/mainBG(1).png")).getImage();
 
         peashooter = new ImageIcon(this.getClass().getResource("images/plants/peashooter.gif")).getImage();
         frozenPeashooter = new ImageIcon(this.getClass().getResource("images/plants/snowpea.gif")).getImage();
@@ -69,14 +69,14 @@ public class Panel extends JLayeredPane implements MouseMotionListener {
         coneHeadZombie = new ImageIcon(this.getClass().getResource("images/zombies/zombie2.png")).getImage();
 
         ZombiesLane = new ArrayList<>();
-        ZombiesLane.add(new ArrayList<>()); // line 1
+        ZombiesLane.add(new ArrayList<>()); // line 1       //to locate zombie entities
         ZombiesLane.add(new ArrayList<>()); // line 2
         ZombiesLane.add(new ArrayList<>()); // line 3
         ZombiesLane.add(new ArrayList<>()); // line 4
         ZombiesLane.add(new ArrayList<>()); // line 5
 
         PeasLane = new ArrayList<>();
-        PeasLane.add(new ArrayList<>()); // line 1
+        PeasLane.add(new ArrayList<>()); // line 1      // to locate peas entities
         PeasLane.add(new ArrayList<>()); // line 2
         PeasLane.add(new ArrayList<>()); // line 3
         PeasLane.add(new ArrayList<>()); // line 4
@@ -174,6 +174,7 @@ public class Panel extends JLayeredPane implements MouseMotionListener {
             }
         }
 
+        // Draw zombies
         for (int i = 0; i < 5; i++) {
             for (Zombie z : ZombiesLane.get(i)) {
                 if (z instanceof NormalZombie) {
@@ -183,6 +184,7 @@ public class Panel extends JLayeredPane implements MouseMotionListener {
                 }
             }
 
+            // Draw pea bullets
             for (int j = 0; j < PeasLane.get(i).size(); j++) {
                 Pea p = PeasLane.get(i).get(j);
                 if (p instanceof FreezePea) {

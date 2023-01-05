@@ -1,6 +1,6 @@
 import java.awt.*;
 
-public class FreezePea extends Pea { // FreezePea is a kìd of Pea
+public class FreezePea extends Pea { // FreezePea is a kind of Pea
 
     public FreezePea(Panel parent, int lane, int startX) { // constructor
         super(parent, lane, startX);
@@ -18,7 +18,7 @@ public class FreezePea extends Pea { // FreezePea is a kìd of Pea
                 boolean exit = false;
                 if (z.health < 0) {
                     System.out.println("ZOMBIE DIE");
-                    Panel.setProgress(10);
+                    Panel.setProgress(10);              // If a zombie die, progress increase 10. If progress is > 150, level is completed, jump to next level.
                     p.ZombiesLane.get(myLane).remove(i);
                     exit = true;
                 }
@@ -28,7 +28,7 @@ public class FreezePea extends Pea { // FreezePea is a kìd of Pea
             }
         }
 
-        posX += 15;
+        posX += 15;     // bullet flies
     }
 
 }

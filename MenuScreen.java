@@ -8,7 +8,7 @@ public class MenuScreen extends JPanel {
     public MenuScreen() {
         initComponents();
         setSize(1024, 768);
-        menu = new ImageIcon(this.getClass().getResource("images/menu.JPG")).getImage();
+        menu = new ImageIcon(this.getClass().getResource("images/menu(1).png")).getImage();
 
     }
 

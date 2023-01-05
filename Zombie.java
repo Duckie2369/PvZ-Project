@@ -36,7 +36,7 @@ public class Zombie {
                     posX -= 1;
                 }
             } else {
-                collided.markedPlant.health -= 10;
+                collided.markedPlant.health -= 10;      // zombies collide plants
                 if (collided.markedPlant.health < 0) {
                     collided.removePlant();
                 }
